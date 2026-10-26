@@ -1,0 +1,4 @@
+import { Button } from "@mui/material";
+import { Add } from "@mui/icons-material";
+type Props = { loading: boolean; loadError: string; onAdd: () => void };
+export default function DashboardHeader({ loading, loadError, onAdd }: Props) { return (<header className="topbar"><div className="brand"><div className="brand-logo">C</div><div><div className="brand-title">ApexCRM <span className="edition">Assessment Edition</span></div><p>Frontend Assessment CRM with Maximum Fields &amp; Full CRUD</p></div></div><div className="header-actions"><span className="connection"><i className={loadError ? "offline" : loading ? "pending" : ""} />{loading ? "Connecting..." : loadError ? "Connection unavailable" : "API Connected (JSONPlaceholder)"}</span><Button variant="contained" startIcon={<Add />} onClick={onAdd}>Add New Lead</Button></div></header>); }

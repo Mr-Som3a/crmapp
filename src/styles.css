@@ -1,0 +1,471 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  background: #0f1727;
+  color: #f5f7ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button,
+input {
+  font: inherit;
+}
+.topbar {
+  min-height: 76px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #1e2a3c;
+  border-bottom: 1px solid #334155;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-logo {
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(35deg, #6665fa, #10cce0);
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  font-weight: 700;
+}
+.brand-title {
+  font-size: 21px;
+  font-weight: 750;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  letter-spacing: -0.5px;
+}
+.edition {
+  font-size: 11px;
+  letter-spacing: 0;
+  font-weight: 500;
+  border: 1px solid #45417c;
+  background: #302f59;
+  color: #a8a5ff;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+.brand p {
+  font-size: 12px;
+  color: #95a9c4;
+  margin: 4px 0 0;
+}
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.header-actions .MuiButton-root {
+  white-space: nowrap;
+  background: #5144e7;
+  padding: 9px 17px;
+  box-shadow: 0 7px 18px #4f46e52b;
+}
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border: 1px solid #45546b;
+  border-radius: 9px;
+  background: #283548;
+}
+.connection i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2bc49a;
+}
+.connection i.offline {
+  background: #fb7185;
+}
+.connection i.pending {
+  background: #fbbf24;
+}
+.dashboard {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.metric.MuiCard-root {
+  border: 1px solid #303e52;
+  background: #1c2838;
+  background-image: none;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 3px #00000008;
+}
+.metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.metric .metric-label {
+  font-size: 11px;
+  letter-spacing: 0.65px;
+  color: #9bb0ce;
+}
+.metric-icon {
+  opacity: 0.55;
+  display: flex;
+}
+.metric-icon svg {
+  font-size: 20px;
+}
+.metric .metric-value {
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.25;
+  margin-top: 9px;
+  letter-spacing: 0.5px;
+}
+.metric .metric-caption {
+  font-size: 12px;
+  color: #9bb0ce;
+  margin-top: 5px;
+}
+.metric:first-child .metric-caption {
+  color: #2ee6b6;
+}
+.metric:nth-child(3) .metric-caption {
+  color: #aaa8ff;
+}
+.metric:nth-child(4) .metric-caption {
+  color: #43ddf0;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #1c2838;
+  border: 1px solid #303e52;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.search {
+  max-width: 430px;
+}
+.filters .MuiOutlinedInput-root {
+  background: #0f1727;
+  font-size: 13px;
+  border-radius: 12px;
+}
+.filters .MuiOutlinedInput-notchedOutline {
+  border-color: #35455e;
+}
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.filter-controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #9bb0ce;
+}
+.filter-controls .MuiTextField-root {
+  width: 135px;
+}
+.table-panel {
+  background: #1c2838;
+  border: 1px solid #303e52;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.table-panel .MuiTableCell-root {
+  border-color: #2d3b4e;
+  padding: 20px 16px;
+}
+.table-panel .MuiTableHead-root {
+  background: #1e2a3c;
+}
+.table-panel .MuiTableHead-root .MuiTableCell-root {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #a2b4cf;
+  font-weight: 700;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+.contact-cell {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.contact-avatar.MuiAvatar-root {
+  width: 40px;
+  height: 40px;
+  font-size: 13px;
+  border: 2px solid #889bad55;
+}
+.contact-name,
+.company-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+.contact-email,
+.contact-phone,
+.job-title {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #9bb0ce;
+  text-decoration: none;
+}
+.contact-email:hover {
+  color: #c2bdff;
+}
+.contact-phone {
+  color: #7188a7;
+}
+.company-name {
+  max-width: 150px;
+}
+.status {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
+  border: 1px solid;
+}
+.status-lead {
+  color: #ffcb52;
+  background: #795a1026;
+  border-color: #97742088;
+}
+.status-contact {
+  color: #69a9ff;
+  background: #23589c26;
+  border-color: #3169b266;
+}
+.status-customer {
+  color: #1ee4b0;
+  background: #086c5d33;
+  border-color: #168f7366;
+}
+.priority {
+  font-size: 11px;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 5px 8px;
+}
+.priority-low {
+  color: #9bafc9;
+  background: #2a394b;
+}
+.priority-medium {
+  color: #14d4f9;
+  background: #126c7f33;
+}
+.priority-high {
+  color: #ff9a46;
+  background: #7a4c2d33;
+}
+.deal-value {
+  font-family: Consolas, monospace;
+  color: #19e5a7;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.source {
+  font-size: 12px;
+}
+.row-actions {
+  display: flex;
+  gap: 8px;
+}
+.row-actions .MuiSvgIcon-root {
+  font-size: 17px;
+}
+.row-actions .edit-action {
+  color: #9690ff;
+}
+.row-actions .delete-action {
+  color: #fb7185;
+}
+.table-panel .MuiTablePagination-root {
+  color: #9bb0ce;
+  border-top: 1px solid #303e52;
+}
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #7188a7;
+  font-size: 11px;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+.dashboard-footer b {
+  margin: 0 7px;
+  font-weight: 400;
+}
+.dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-section {
+  margin: 0 0 26px;
+}
+.form-section:last-child {
+  margin-bottom: 4px;
+}
+.section-label.MuiTypography-root {
+  margin-bottom: 16px;
+  color: #aaa6ff;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 16px;
+}
+.detail-intro {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 8px 0 24px;
+}
+.details {
+  margin: 0;
+}
+.details > div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  padding: 10px 0;
+  gap: 16px;
+  border-bottom: 1px solid #303e52;
+  font-size: 13px;
+}
+.details dt {
+  color: #95a9c4;
+}
+.details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1100px) {
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metric-icon {
+    display: none;
+  }
+  .metric.MuiCard-root {
+    min-height: 126px;
+  }
+  .topbar {
+    padding: 16px 12px;
+  }
+  .dashboard {
+    padding: 24px 12px;
+  }
+  .brand p {
+    font-size: 11px;
+  }
+  .connection {
+    font-size: 10px;
+  }
+}
+@media (max-width: 760px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filters {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .search {
+    max-width: none;
+  }
+  .filter-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filter-controls label {
+    flex: 1;
+  }
+  .filter-controls .MuiTextField-root {
+    width: 100%;
+  }
+  .dashboard-footer {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .metric.MuiCard-root {
+    padding: 18px;
+  }
+  .brand-title {
+    font-size: 20px;
+  }
+  .metric .metric-value {
+    font-size: 28px;
+  }
+}
+@media (max-width: 460px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .filter-controls label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .connection {
+    padding: 8px;
+    font-size: 9px;
+  }
+  .header-actions .MuiButton-root {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+  .edition {
+    font-size: 9px;
+  }
+  .metric .metric-label {
+    font-size: 10px;
+  }
+  .metric .metric-caption {
+    font-size: 10px;
+  }
+  .metrics {
+    gap: 12px;
+  }
+  .details > div {
+    grid-template-columns: 105px 1fr;
+  }
+}
